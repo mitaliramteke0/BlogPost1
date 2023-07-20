@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Blog{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'blog_list' %}">My Blog</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'blog_list' %}">Home</a></li>
+                <li><a href="{% url 'blog_create' %}">Create Post</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Content from child templates will go here -->
+        {% endblock %}
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
+
+{% comment %} to control the viewport on mobile devices we can use below code which is used in linw no 6 {% endcomment %} 
+{% comment %} <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% endcomment %}
